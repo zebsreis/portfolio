@@ -1,0 +1,1693 @@
+<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Thu Apr 24 2025 09:03:35 GMT+0000 (Coordinated Universal Time)  -->
+<html data-wf-page="67d80787380c03d2e553e8b5" data-wf-site="67d80787380c03d2e553e8ac" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Copy of Portfolio 2025 Final</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="Webflow" name="generator">
+  <link href="css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="css/josereis-dev-94666e8946d9b2bd49af63d46d.webflow.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
+  <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon">
+  <link href="images/webclip.png" rel="apple-touch-icon"><!--  Consolidated Styles  -->
+  <style id="selection-style">
+  /* Prevent overscroll/bounce in both directions */
+  html,
+  body {
+    overscroll-behavior: none;
+  }
+  /* Global text-size adjustments */
+  body {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+  }
+  /* Wait overlay styling */
+  body.transitioning,
+  body.transitioning * {
+    cursor: wait !important;
+    pointer-events: none !important;
+  }
+  #wait-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: wait !important;
+    z-index: 9999;
+    display: none;
+  }
+  /* Selection style (default color) */
+  ::selection {
+    background: #ff00ff;
+    color: black;
+  }
+  ::-moz-selection {
+    background: #ff00ff;
+    color: black;
+  }
+  /* -------------------------------
+     Title & Year Letter Animation
+  ------------------------------- */
+  .project_page_title,
+  .project_page_year {
+    opacity: 0;
+    overflow: hidden;
+  }
+  .project_page_title .word,
+  .project_page_year .word {
+    display: inline-block;
+    overflow: hidden;
+    margin-right: 0.25em; /* simulates space between words */
+  }
+  .project_page_title .letter,
+  .project_page_year .letter {
+    display: inline-block;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 0.8s cubic-bezier(0.215, 0.61, 0.355, 1),
+                opacity 0.2s ease;
+  }
+  .project_page_title .letter.animate,
+  .project_page_year .letter.animate {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  /* -------------------------------
+     Subtle Fade-in for Description & Services
+     (Fade and move from 20px below to natural position)
+  ------------------------------- */
+  .project_page_description,
+  .project_services {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .project_page_description.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .project_services.animate {
+    opacity: 0.8;  /* Fade in to 0.8 for project services */
+    transform: translateY(0);
+  }
+</style>
+  <!--  External Scripts and Libraries  -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.11.4/dist/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/@barba/core"></script>
+  <script type="text/javascript" src="https://uploads-ssl.webflow.com/5ea8a7b6e2d87523506f447f/5ea8ab1dc8bfcc89b2c29dd9_imagesloaded.pkgd.min.js.txt">
+</script>
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@latest/bundled/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+  <!--  External CSS for Swiper  -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <style>
+  /* initial hidden state */
+  .connect_main_text .letter,
+  .connect_bottom_links > *,
+  .btn_connect_underline {
+    opacity: 0;
+  }
+  /* clip each word’s letters */
+  .connect_main_text .word {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+  }
+  .connect_main_text .letter {
+    display: inline-block;
+    transform: translateY(100%);
+  }
+  /* clip each connect_text and position it above */
+  .connect_text {
+    overflow: hidden;
+    transform: translateY(-100%);
+  }
+  /* bottom links: no overflow on parent */
+  .connect_bottom_links > * {
+    display: inline-block;
+    transform: translateY(100%);
+    opacity: 1 !important; /* keep fully visible */
+  }
+</style>
+</head>
+<body>
+  <div data-barba="wrapper" class="nav_1_component">
+    <div class="u-display-none w-embed">
+      <style>
+:root {
+	--nav_1--height: auto;
+	--nav_1--height-total: var(--nav_1--height);
+	--nav_1--menu-open-duration: 400ms;
+	--nav_1--menu-close-duration: 400ms;
+	--nav_1--dropdown-duration: 400ms;
+	--nav_1--dropdown-open-duration: 400ms;
+	--nav_1--dropdown-delay: 0ms;
+}
+/* on smaller screens */
+@media (width < 60em) {
+	/* disable scroll when mobile menu is open */
+	body:has(.nav_1_component .w-nav-button.w--open) { overflow: hidden; }
+}
+/* on larger screens */
+@container (min-width: 60em) {
+	/* show desktop nav & dropdown backdrop */
+	.nav_1_wrap.is-desktop, .nav_1_dropdown_backdrop { display: block; }
+	/* hide mobile nav & mobile menu backdrop */
+	.nav_1_wrap.is-mobile, .nav_1_menu_backdrop { display: none; }
+}
+/* dropdown list: initial state */
+html:not(.wf-design-mode) .nav_1_dropdown_component > .w-dropdown-list {
+	/* removes display none to enable css transitions */
+	display: grid !important;
+	grid-template-columns: minmax(0, 1fr);
+	/* sets list to 0 height by default */
+	grid-template-rows: 0fr;
+	transition: grid-template-rows var(--nav_1--dropdown-duration);
+	/* makes list content not focusable when closed */
+	visibility: hidden;
+	opacity: 0;
+}
+/* makes list content focusable when opened */
+html:not(.wf-design-mode) .nav_1_dropdown_component > .w-dropdown-list.w--open {
+	visibility: visible;
+	opacity: 1;
+}
+/* sets list child to overflow hidden to enable css height transition */
+.nav_1_dropdown_component > .w-dropdown-list > * {
+	overflow: hidden;
+}
+/* set open state of dropdown list */
+.nav_1_dropdown_component:has(> .w-dropdown-toggle[aria-expanded="true"]) > .w-dropdown-list {
+	--nav_1--dropdown-duration: var(--nav_1--dropdown-open-duration);
+	grid-template-rows: 1fr;
+}
+/* on desktop, delay dropdown opening if another dropdown is open */
+.nav_1_wrap.is-desktop:has(.nav_1_dropdown_component > .w-dropdown-toggle.w--open[aria-expanded="false"]) .nav_1_dropdown_component:has(> .w--open[aria-expanded="true"]) > .w-dropdown-list {
+	transition-delay: var(--nav_1--dropdown-duration);
+}
+/* reveal dropdown backdrop when dropdown open */
+.nav_1_dropdown_backdrop {
+	transition: opacity var(--nav_1--dropdown-duration);
+}
+body:has(.nav_1_dropdown_component > [aria-expanded="true"]) .nav_1_dropdown_backdrop {
+	opacity: 1;
+}
+/* rotate arrow inside open dropdown */
+.w-dropdown-toggle[aria-expanded="true"] .nav_1_links_svg {
+	transform: rotate(-180deg);
+}
+/* fade out other dropdown links when link is hovered */
+@media (hover: hover) and (pointer: fine) {
+	body:has(.nav_1_dropdown_item:hover) .nav_1_dropdown_item:not(:hover) > * > * {
+		opacity: 0.5;
+	}
+}
+/* reveal mobile menu backdrop on menu open */
+.nav_1_menu_backdrop {
+	transition: opacity var(--nav_1--menu-close-duration);
+}
+.nav_1_component:has(.w-nav-button.w--open) .nav_1_menu_backdrop {
+	opacity: 1;
+}
+/* menu animations */
+@keyframes menuOpen {
+ from { clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); }
+ to { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+}
+@keyframes menuClose {
+ from { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+ to { clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); }
+}
+/* menu open */
+.nav_1_component:has(.w-nav-button.w--open) .w-nav-menu {
+	animation: menuOpen var(--nav_1--menu-open-duration) ease-in-out forwards;
+}
+/* menu close */
+.nav_1_component:has(.w-nav-button:not(.w--open)) .w-nav-menu {
+	animation: menuClose var(--nav_1--menu-close-duration) ease-in-out forwards;
+}
+/* position overflow to top of screen */
+.nav_1_component .w-nav-overlay {
+ top: 0;
+ min-height: 100vh;
+}
+/* open dropdown on mobile */
+.nav_1_wrap.is-mobile [data-open-on-mobile] > .w-dropdown-toggle {
+	display: none;
+}
+.nav_1_wrap.is-mobile [data-open-on-mobile] > .w-dropdown-list {
+	visibility: visible;
+	opacity: 1;
+	display: block;
+	grid-template-rows: 1fr;
+}
+/* Rotate Nav Banner Arrow When External Link */
+a[target="_blank"] .nav_1_banner_svg {
+	transform: rotate(-45deg);
+}
+/* nav banner */
+html:has(.nav_1_banner_wrap:not(.w-condition-invisible)):not(.hide-nav-banner) {
+	--nav_1--height-total: calc(var(--nav_1--banner-height) + var(--nav_1--height));
+}
+.hide-nav-banner .nav_1_banner_wrap {
+	display: none;
+}
+  /* Blinking colon style */
+  .blink {
+    animation: blinkAnimation 1s steps(1, start) infinite;
+  }
+  @keyframes blinkAnimation {
+    50% { opacity: 0; }
+  }
+</style>
+    </div>
+    <a href="/#main" class="nav_1_skip_wrap w-inline-block">
+      <div class="nav_1_skip_text u-text-style-small">Skip to main content</div>
+    </a>
+    <div role="banner" class="nav_1_wrap is-desktop">
+      <div class="nav_1_contain u-container-full">
+        <a aria-label="Home Page" href="index.html" class="nav_1_logo_wrap w-inline-block">
+          <div class="nav_1_links_text">jbsr</div>
+        </a>
+        <div id="navbar-timezone" class="nav_1_links_text is-time"> </div>
+        <nav role="navigation" class="nav_1_desktop_layout">
+          <div class="nav_1_links_component is-desktop">
+            <ul role="list" class="nav_1_links_wrap is-desktop w-list-unstyled">
+              <li class="nav_1_links_item">
+                <a href="about.html" class="nav_1_links_link is-desktop w-inline-block">
+                  <div class="nav_1_links_text">about,</div>
+                  <div class="nav_line"></div>
+                </a>
+                <link rel="prefetch" href="/about">
+              </li>
+              <li class="nav_1_links_item">
+                <a href="works.html" class="nav_1_links_link is-desktop w-inline-block">
+                  <div class="nav_1_links_text">work,</div>
+                  <div class="nav_line"></div>
+                </a>
+                <link rel="prefetch" href="/works">
+              </li>
+              <li class="nav_1_links_item">
+                <a href="playground.html" class="nav_1_links_link is-desktop w-inline-block">
+                  <div class="nav_1_links_text">playground,</div>
+                  <div class="nav_line"></div>
+                </a>
+              </li>
+              <li class="nav_1_links_item">
+                <a href="connect.html" class="nav_1_links_link is-desktop w-inline-block">
+                  <div class="nav_1_links_text">connect</div>
+                  <div class="nav_line"></div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <div id="modeSwitcher" class="mode_switcher">
+          <div class="mode_switcher_circle"></div>
+        </div>
+      </div>
+    </div>
+    <div data-animation="default" data-collapse="all" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="nav_1_wrap is-mobile w-nav">
+      <div class="nav_1_contain u-container">
+        <a aria-label="Home Page" href="index.html" class="nav_1_logo_wrap w-inline-block">
+          <div class="nav_1_links_text">jbsr</div>
+        </a>
+        <div id="btn_open_menu_mobile" class="nav_1_links_text">menu</div>
+      </div>
+    </div>
+    <div class="nav_1_dropdown_backdrop"></div>
+    <div class="nav_1_menu_backdrop"></div>
+    <div class="page-styles w-embed w-script">
+      <style>
+/* Underline (nav_line) default state: off-screen left */
+.nav_line {
+  transform: translateX(-100%);
+  opacity: 0;
+  /* For opacity: no change initially, but when fading out, wait 0.3s */
+  transition: transform 0.3s ease, opacity 0s 0.3s;
+}
+/* Hover in: underline slides in from left and becomes visible immediately */
+.nav_1_links_item.hover-in .nav_line {
+  transform: translateX(0);
+  opacity: 1;
+  /* On hover in, opacity changes immediately */
+  transition: transform 0.3s ease, opacity 0s;
+}
+/* Hover out: underline slides out to right; opacity then immediately set to 0 after 0.3s delay */
+.nav_1_links_item.hover-out .nav_line {
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0s 0.3s;
+}
+/* Active state: underline remains visible without any transition */
+.nav_1_links_item.active .nav_line {
+  transform: translateX(0);
+  opacity: 1;
+  transition: none;
+}
+</style>
+      <script>
+  // Hover animations for non-active nav items.
+  document.querySelectorAll('.nav_1_links_item').forEach((item) => {
+    item.addEventListener('mouseenter', () => {
+      if (!item.classList.contains('active')) {
+        // On hover in, remove any hover-out state and add hover-in.
+        item.classList.remove('hover-out');
+        item.classList.add('hover-in');
+      }
+    });
+    item.addEventListener('mouseleave', () => {
+      if (!item.classList.contains('active')) {
+        // On mouse leave, remove hover-in and add hover-out.
+        item.classList.remove('hover-in');
+        item.classList.add('hover-out');
+        const line = item.querySelector('.nav_line');
+        if (line) {
+          // After the 0.3s transform transition, reset the inline transform.
+          setTimeout(() => {
+            if (item.classList.contains('hover-out') && !item.classList.contains('active')) {
+              // Temporarily disable transitions to reset instantly.
+              line.style.transition = "none";
+              // Remove inline transform so that default CSS applies.
+              line.style.transform = "";
+              // Force reflow.
+              void line.offsetWidth;
+              // Restore transitions.
+              line.style.transition = "";
+              // Remove the hover-out class so next hover triggers hover-in.
+              item.classList.remove('hover-out');
+            }
+          }, 300);
+        }
+      }
+    });
+  });
+  // On click, immediately set the clicked nav item to active,
+  // and animate out the underline of the previous active item.
+  document.querySelectorAll('.nav_1_links_item a').forEach(link => {
+    link.addEventListener('click', function() {
+      const newActive = link.closest('.nav_1_links_item');
+      const currentActive = document.querySelector('.nav_1_links_item.active');
+      if (currentActive && currentActive !== newActive) {
+        // Trigger underline-out animation on the previous active.
+        currentActive.classList.add('hover-out');
+        // After the 0.3s transition, remove its active state.
+        setTimeout(() => {
+          currentActive.classList.remove('active', 'hover-out');
+        }, 300);
+      }
+      // Immediately set the clicked nav item as active.
+      newActive.classList.remove('hover-in', 'hover-out');
+      newActive.classList.add('active');
+    });
+  });
+  // Update active nav items based on current URL.
+  function updateActiveNav() {
+    document.querySelectorAll('.nav_1_links_item').forEach((item) => {
+      const link = item.querySelector('a');
+      if (!link) return;
+      const href = link.getAttribute('href');
+      const currentPath = window.location.pathname;
+      let shouldBeActive = false;
+      if (href === '/works' && currentPath.indexOf('/works') === 0) {
+        shouldBeActive = true;
+      } else if (href === currentPath) {
+        shouldBeActive = true;
+      }
+      if (shouldBeActive) {
+        if (!item.classList.contains('active')) {
+          item.classList.remove('hover-in', 'hover-out');
+          item.classList.add('active');
+        }
+      } else {
+        item.classList.remove('active');
+      }
+    });
+  }
+  // Run updateActiveNav on initial page load.
+  document.addEventListener('DOMContentLoaded', updateActiveNav);
+  // Barba.js global after hook: update active nav state after transitions.
+  if (typeof barba !== "undefined") {
+    barba.hooks.after((data) => {
+      window.scrollTo(0, 0);
+      document.documentElement.style.overflow = "";
+      resetWebflow(data);
+      if (data && data.next && data.next.html) {
+        runBarbaScripts(data.next.html);
+      }
+      setTimeout(() => {
+        updateActiveNav();
+      }, 310);
+    });
+  }
+</script>
+    </div>
+    <div class="page-styles w-embed w-script">
+      <script>
+  // 1) Continuously update Bali time every second
+  function updateTime() {
+    const now = new Date();
+    // Calculate WITA time (UTC+8)
+    const utcHours = now.getUTCHours();
+    const utcMinutes = now.getUTCMinutes();
+    const witaHours = (utcHours + 8) % 24;
+    // Convert to 12-hour format
+    const period = witaHours >= 12 ? 'PM' : 'AM';
+    const hours12 = witaHours % 12 || 12; // Convert 0 to 12 for 12 AM
+    const hoursStr = hours12 < 10 ? '0' + hours12 : hours12;
+    const minutesStr = utcMinutes < 10 ? '0' + utcMinutes : utcMinutes;
+    // Update the element (with a blinking colon if you like)
+    document.getElementById('navbar-timezone').innerHTML =
+      `BALI, ${hoursStr}<span class="blink">:</span>${minutesStr} ${period}`;
+  }
+  // 2) Calculate how many hours apart the user is from Bali (UTC+8),
+  //    and set it as a tooltip.
+  function setDifferenceTooltip() {
+    const localOffsetHours = -new Date().getTimezoneOffset() / 60; 
+    // getTimezoneOffset() is minutes behind UTC, so we negate it and convert to hours
+    const BALI_OFFSET = 8;
+    let difference = localOffsetHours - BALI_OFFSET;
+    // Round to one decimal if you want to account for half-hour or 45-min time zones
+    difference = Math.round(difference * 10) / 10;
+    let differenceMsg;
+    if (difference === 0) {
+      differenceMsg = "We’re in the same timezone!";
+    } else {
+      const absDiff = Math.abs(difference);
+      differenceMsg = `We are ${absDiff} hour${absDiff !== 1 ? 's' : ''} apart.`;
+    }
+    // Put this message into the default browser tooltip (title attribute)
+    const navbarTimezone = document.getElementById('navbar-timezone');
+    navbarTimezone.setAttribute('title', differenceMsg);
+  }
+  // 3) On page load, start the clock and set the tooltip
+  document.addEventListener('DOMContentLoaded', () => {
+    updateTime();
+    setInterval(updateTime, 1000); // update Bali time every second
+    setDifferenceTooltip(); // sets the tooltip once
+    // (Time zone offset won’t usually change mid-session, so doing this once is enough)
+  });
+</script>
+    </div>
+    <div class="page-scripts w-embed w-script">
+      <style>
+.mode_switcher_circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease;
+  transform: translateX(100%);
+}
+.mode_switcher.active .mode_switcher_circle {
+  transform: translateX(0%);
+}
+</style>
+      <script>
+  const modeSwitcher = document.getElementById('modeSwitcher');
+  modeSwitcher.addEventListener('click', () => {
+    // Toggle the theme classes on the body
+    if (document.body.classList.contains('u-theme-dark')) {
+      document.body.classList.remove('u-theme-dark');
+      document.body.classList.add('u-theme-light');
+    } else {
+      document.body.classList.remove('u-theme-light');
+      document.body.classList.add('u-theme-dark');
+    }
+    // Toggle the .active class on the switcher to move the circle
+    modeSwitcher.classList.toggle('active');
+  });
+</script>
+    </div>
+  </div>
+  <div class="styleguide_guide_wrap">
+    <div class="w-embed">
+      <style>
+html:not(.wf-design-mode) .styleguide_guide_wrap {
+	display: none;
+}
+.styleguide_guide_layout {
+	counter-reset: gridguides;
+}
+.styleguide_guide_layout > div::before {
+  counter-increment: gridguides;
+  content: counter(gridguides);
+}
+</style>
+    </div>
+    <div data-padding-bottom="none" data-padding-top="none" class="styleguide_guide_contain u-container">
+      <div class="styleguide_guide_layout u-grid-custom">
+        <div class="styleguide_guide_column u-vflex-center-bottom"></div>
+        <div class="styleguide_guide_column u-vflex-center-bottom"></div>
+        <div class="styleguide_guide_column u-vflex-center-bottom"></div>
+        <div class="styleguide_guide_column u-vflex-center-bottom"></div>
+        <div class="styleguide_guide_column u-vflex-center-bottom"></div>
+        <div class="styleguide_guide_column u-vflex-center-bottom"></div>
+        <div class="styleguide_guide_column u-vflex-center-bottom"></div>
+        <div class="styleguide_guide_column u-vflex-center-bottom"></div>
+        <div class="styleguide_guide_column u-vflex-center-bottom"></div>
+        <div class="styleguide_guide_column u-vflex-center-bottom"></div>
+        <div class="styleguide_guide_column u-vflex-center-bottom"></div>
+        <div class="styleguide_guide_column u-vflex-center-bottom"></div>
+        <div class="styleguide_guide_column u-vflex-center-bottom"></div>
+        <div class="styleguide_guide_column u-vflex-center-bottom"></div>
+        <div class="styleguide_guide_column u-vflex-center-bottom"></div>
+        <div class="styleguide_guide_column u-vflex-center-bottom"></div>
+        <div class="styleguide_guide_column u-vflex-center-bottom"></div>
+        <div class="styleguide_guide_column u-vflex-center-bottom"></div>
+        <div class="styleguide_guide_column u-vflex-center-bottom"></div>
+        <div class="styleguide_guide_column u-vflex-center-bottom"></div>
+        <div class="styleguide_guide_column u-vflex-center-bottom"></div>
+        <div class="styleguide_guide_column u-vflex-center-bottom"></div>
+        <div class="styleguide_guide_column u-vflex-center-bottom"></div>
+        <div class="styleguide_guide_column u-vflex-center-bottom"></div>
+      </div>
+    </div>
+  </div>
+  <div data-barba-namespace="work" data-barba="container" class="page_wrap">
+    <section class="project_page_wrap">
+      <div class="project_page_contain u-container-full">
+        <div data-wf--global-section-space--section-space="small" class="g_section_space w-variant-d422cbd0-f212-c815-68df-63414354c21d"></div>
+        <div class="project_page_summary u-grid-custom">
+          <h1 id="animatedTitle" class="project_page_title u-text-style-display w-node-ba47b1fb-9525-4931-88bb-8aa93228bd1e-e553e8b5 w-dyn-bind-empty"></h1>
+          <div id="w-node-b575d342-1945-d822-fffb-9087305b9660-e553e8b5" class="g_section_space small"></div>
+          <div id="w-node-_4b859985-5ca8-c384-4d82-6659b55618e0-e553e8b5" class="project_page_year u-text-style-display w-dyn-bind-empty"></div>
+          <div id="w-node-_003f9ca0-0a7e-42f5-c13f-d6fb5fa1d0e0-e553e8b5" class="g_section_space small"></div>
+          <div id="w-node-_7c5fc3f2-8b24-1c8d-3c78-1ba1d14448e6-e553e8b5" class="project_page_description u-vflex-left-top u-gap-2">
+            <div class="project_page_line"></div>
+            <div class="u-text-style-description w-dyn-bind-empty"></div>
+            <div class="project_page_description_extended u-text-style-description u-text-trim-off w-dyn-bind-empty"></div>
+            <div id="btn_show-project-extended" class="btn_main_wrap">
+              <div class="g_clickable_wrap">
+                <a target="" href="#" class="g_clickable_link w-inline-block"><span class="g_clickable_text u-sr-only">Show More</span></a><button type="button" class="g_clickable_btn"><span class="g_clickable_text u-sr-only">Show More</span></button>
+              </div>
+              <div id="btn_text_show-more" aria-hidden="true" class="btn_main_text u-text-style-main">read more</div><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewbox="0 0 19 9" fill="none" class="btn_main_arrow-down">
+                <path d="M9.5 0.995117L9.81812 0.60937L9.5 0.347025L9.18188 0.60937L9.5 0.995117ZM18.0478 8.50259C18.3227 8.47618 18.5241 8.23194 18.4977 7.95706L18.0673 3.47769C18.0409 3.20281 17.7967 3.00139 17.5218 3.0278C17.2469 3.05422 17.0455 3.29846 17.0719 3.57333L17.4545 7.555L13.4728 7.93757C13.1979 7.96398 12.9965 8.20822 13.0229 8.4831C13.0493 8.75798 13.2936 8.9594 13.5685 8.93298L18.0478 8.50259ZM1.31812 8.39063L9.81812 1.38086L9.18188 0.60937L0.681882 7.61914L1.31812 8.39063ZM9.18188 1.38086L17.6819 8.39063L18.3181 7.61914L9.81812 0.60937L9.18188 1.38086Z" fill="currentColor"></path>
+              </svg>
+            </div>
+          </div>
+          <div id="w-node-_08fb2f9b-77dc-94ce-e463-cfb2faa1f388-e553e8b5" class="project_page_spacer"></div>
+          <div id="w-node-a8d4b7df-5c56-6ad5-2cdd-2ae9b4354a34-e553e8b5" class="project_page_spacer"></div>
+          <div id="w-node-fcf1f2e4-87cb-a27e-76e0-c8d3d9009958-e553e8b5" class="project_services w-dyn-bind-empty"></div>
+        </div>
+        <div data-wf--global-section-space--section-space="none" class="g_section_space"></div>
+        <div class="project_page_images u-vflex-left-top">
+          <div data-animate="imageSlideIn" class="project_page_image-100">
+            <div class="image_overlay"></div><img src="" loading="lazy" alt="" class="g_visual_img u-cover-absolute w-dyn-bind-empty">
+          </div>
+          <div data-animate="imageSlideIn" class="project_page_image-100">
+            <div class="image_overlay"></div><img src="" loading="lazy" alt="" class="g_visual_img u-cover-absolute w-dyn-bind-empty">
+          </div>
+          <div class="project_page_image-100 u-hflex-center-center is-split">
+            <div data-animate="imageSlideIn" class="project_page_image_50">
+              <div class="image_overlay"></div><img src="" loading="lazy" alt="" class="g_visual_img u-cover-absolute w-dyn-bind-empty">
+            </div>
+            <div data-animate="imageSlideIn" class="project_page_image_50">
+              <div class="image_overlay"></div><img src="" loading="lazy" alt="" class="g_visual_img u-cover-absolute w-dyn-bind-empty">
+            </div>
+          </div>
+          <div data-animate="imageSlideIn" class="project_page_image-100">
+            <div class="image_overlay"></div><img src="" loading="lazy" alt="" class="g_visual_img u-cover-absolute w-dyn-bind-empty">
+          </div>
+          <div data-animate="imageSlideIn" class="project_page_image-100">
+            <div class="image_overlay"></div><img src="" loading="lazy" alt="" class="g_visual_img u-cover-absolute w-dyn-bind-empty">
+          </div>
+          <div data-animate="imageSlideIn" class="project_page_image-100">
+            <div class="image_overlay"></div><img src="" loading="lazy" alt="" class="g_visual_img u-cover-absolute w-dyn-bind-empty">
+          </div>
+          <div data-animate="imageSlideIn" class="project_page_image-100">
+            <div class="image_overlay"></div><img src="" loading="lazy" alt="" class="g_visual_img u-cover-absolute w-dyn-bind-empty">
+          </div>
+          <div data-wf--global-section-space--section-space="main" class="g_section_space w-variant-60a7ad7d-02b0-6682-95a5-2218e6fd1490"></div>
+        </div>
+        <div tr-cmsnext-loop="true" tr-cmsnext-element="component" class="next_project_wrap">
+          <div class="w-dyn-list">
+            <div role="list" class="w-dyn-items">
+              <div role="listitem" class="w-dyn-item">
+                <a href="#" class="nextproj_link_wrap u-grid-column-3 w-inline-block">
+                  <div class="up_next_wrapper u-hflex-left-center u-gap-1">
+                    <div class="u-text-style-description">Next Project</div>
+                  </div>
+                  <div class="u-vflex-left-top u-gap-1">
+                    <div class="u-text-style-h6 w-dyn-bind-empty"></div>
+                    <div class="text-date w-dyn-bind-empty"></div>
+                  </div>
+                  <div data-animate="imageSlideIn" class="project_page_image-100">
+                    <div class="image_overlay"></div><img src="" loading="lazy" alt="" class="g_visual_img u-cover-absolute w-dyn-bind-empty">
+                    <div class="w-embed">
+                      <style>
+.nextproj_link_wrap:hover .g_visual_img {
+  transform: scale(1.05);
+  transition: transform 0.4s ease;
+}
+.g_visual_img {
+  transition: transform 0.4s ease; /* Smooth transition when not hovered */
+}
+</style>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="w-dyn-empty">
+              <div>No items found.</div>
+            </div>
+          </div>
+        </div>
+        <div data-wf--global-section-space--section-space="main" class="g_section_space w-variant-60a7ad7d-02b0-6682-95a5-2218e6fd1490"></div>
+      </div>
+    </section>
+    <div data-barba-script="" data-barba="wrapper" class="page_code_wrap u-display-none">
+      <div class="page_code_base w-embed">
+        <style>
+:root {
+    --site--max-width: min(var(--site--width), 100vw);
+    --container--main: calc(var(--site--max-width) - var(--site--margin) * 2);
+    --container--full: calc(100vw - var(--site--margin) * 2);
+    --container--small: calc(var(--column-width--plus-gutter) * (var(--site--column-count) - 2) - var(--site--gutter));
+    --site--gutter-total: calc(var(--site--gutter) * (var(--site--column-count) - 1));
+    --column-width--1: calc((var(--container--main) - var(--site--gutter-total)) / var(--site--column-count));
+    --column-width--plus-gutter: calc(var(--column-width--1) + var(--site--gutter));
+    --column-width--2: calc(var(--column-width--plus-gutter) * 2 - var(--site--gutter));
+    --column-width--3: calc(var(--column-width--plus-gutter) * 3 - var(--site--gutter));
+    --column-width--4: calc(var(--column-width--plus-gutter) * 4 - var(--site--gutter));
+    --column-width--5: calc(var(--column-width--plus-gutter) * 5 - var(--site--gutter));
+    --column-width--6: calc(var(--column-width--plus-gutter) * 6 - var(--site--gutter));
+    --column-width--7: calc(var(--column-width--plus-gutter) * 7 - var(--site--gutter));
+    --column-width--8: calc(var(--column-width--plus-gutter) * 8 - var(--site--gutter));
+    --column-width--9: calc(var(--column-width--plus-gutter) * 9 - var(--site--gutter));
+    --column-width--10: calc(var(--column-width--plus-gutter) * 10 - var(--site--gutter));
+    --column-width--11: calc(var(--column-width--plus-gutter) * 11 - var(--site--gutter));
+    --column-width--12: calc(var(--column-width--plus-gutter) * 12 - var(--site--gutter));
+    --column-margin--1: calc(var(--column-width--plus-gutter) * 1);
+    --column-margin--2: calc(var(--column-width--plus-gutter) * 2);
+    --column-margin--3: calc(var(--column-width--plus-gutter) * 3);
+    --column-margin--4: calc(var(--column-width--plus-gutter) * 4);
+    --column-margin--5: calc(var(--column-width--plus-gutter) * 5);
+    --column-margin--6: calc(var(--column-width--plus-gutter) * 6);
+    --column-margin--7: calc(var(--column-width--plus-gutter) * 7);
+    --column-margin--8: calc(var(--column-width--plus-gutter) * 8);
+    --column-margin--9: calc(var(--column-width--plus-gutter) * 9);
+    --column-margin--10: calc(var(--column-width--plus-gutter) * 10);
+    --column-margin--11: calc(var(--column-width--plus-gutter) * 11);
+    --column-margin--12: calc(var(--column-width--plus-gutter) * 12);
+    --breakout-start: [full-start] minmax(0, 1fr) [content-start];
+    --breakout-end: [content-end] minmax(0, 1fr) [full-end];
+    --grid-breakout-single: var(--breakout-start) minmax(0, var(--container--main)) var(--breakout-end);
+    --grid-breakout: var(--breakout-start) repeat(var(--site--column-count), minmax(0, var(--column-width--1))) var(--breakout-end);
+    --grid-main: repeat(var(--site--column-count), minmax(0, 1fr));
+    --grid-1: repeat(1, minmax(0, 1fr));
+    --grid-2: repeat(2, minmax(0, 1fr));
+    --grid-3: repeat(3, minmax(0, 1fr));
+    --grid-4: repeat(4, minmax(0, 1fr));
+    --grid-5: repeat(5, minmax(0, 1fr));
+    --grid-6: repeat(6, minmax(0, 1fr));
+    --grid-7: repeat(7, minmax(0, 1fr));
+    --grid-8: repeat(8, minmax(0, 1fr));
+    --grid-9: repeat(9, minmax(0, 1fr));
+    --grid-10: repeat(10, minmax(0, 1fr));
+    --grid-11: repeat(11, minmax(0, 1fr));
+    --grid-12: repeat(12, minmax(0, 1fr));
+    --_typography---text-transform--none: none;
+    --_typography---text-transform--uppercase: uppercase;
+    --_typography---text-transform--captialize: capitalize;
+    --_typography---text-transform--lowercase: lowercase;
+    --align--flex-start: flex-start;
+    --align--flex-center: center;
+    --align--flex-end: flex-end;
+    --align--text-left: left;
+    --align--text-center: center;
+    --align--text-right: right;
+}
+* {
+	vertical-align: bottom;
+}
+::before, ::after {
+	box-sizing: border-box;
+}
+html {
+	background-color: var(--_theme---background);
+}
+button {
+	background-color: unset;
+	padding: unset;
+	text-align: inherit;
+}
+button:not(:disabled) {
+	cursor: pointer;
+}
+video {
+	width: 100%;
+	object-fit: cover;
+}
+video.wf-empty {
+	padding: 0;
+}
+svg {
+	max-width: 100%;
+}
+section, header, footer {
+	position: relative;
+}
+@media (prefers-color-scheme: light) {
+	option {
+		color: black;
+	}
+}
+img::selection {
+	background: transparent;
+}
+/* Typography */
+body {
+	text-transform: var(--_text-style---text-transform);
+	font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
+}
+/* Clear Defaults */
+a:not([class]) {
+	text-decoration: underline;
+}
+h1,h2,h3,h4,h5,h6,p,blockquote,label {
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	line-height: inherit;
+	letter-spacing: inherit;
+	text-transform: inherit;
+	text-wrap: inherit;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+/* Margin Trim */
+:is(.u-margin-trim, .u-rich-text) > :not(:not(.w-condition-invisible) ~ :not(.w-condition-invisible)) {
+	margin-top: 0;
+}
+:is(.u-margin-trim, .u-rich-text) > :not(:has(~ :not(.w-condition-invisible))) {
+	margin-bottom: 0;
+}
+.w-richtext a {
+	position: relative;
+	z-index: 4;
+}
+/* Line Height Trim */
+:is([class*="u-text-style-"],h1,h2,h3,h4,h5,h6,p):not(.w-richtext,.u-text-trim-off)::before {
+	content: "";
+	display: table;
+	margin-bottom: calc(-0.5lh + var(--_text-style---trim-top));
+}
+:is([class*="u-text-style-"],h1,h2,h3,h4,h5,h6,p):not(.w-richtext,.u-text-trim-off)::after {
+	content: "";
+	display: table;
+	margin-bottom: calc(-0.5lh + var(--_text-style---trim-bottom));
+}
+/* Line Clamp */
+.u-line-clamp-1, .u-line-clamp-2, .u-line-clamp-3, .u-line-clamp-4 {
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+}
+.u-line-clamp-2 { -webkit-line-clamp: 2; }
+.u-line-clamp-3 { -webkit-line-clamp: 3; }
+.u-line-clamp-4 { -webkit-line-clamp: 4; }
+/* Child Contain */
+.u-child-contain > * {
+	width: 100%;
+	max-width: inherit !important;
+  margin-inline: 0 !important;
+	margin-top: 0 !important;
+}
+/* Hide */
+.u-hide-if-empty:empty,
+.u-hide-if-empty:not(:has(> :not(.w-condition-invisible))),
+.u-hide-if-empty-cms:not(:has(.w-dyn-item)),
+.u-embed-js,
+.u-embed-css {
+	display: none !important;
+}
+/* Focus State */
+a, button, :where([tabindex]),
+.w-checkbox-input--inputType-custom,
+.w-form-formradioinput--inputType-custom {
+	outline-offset: var(--focus--offset-outer);
+}
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible,
+.w-checkbox:has(:focus-visible) .w-checkbox-input--inputType-custom,
+.w-radio:has(:focus-visible) .w-form-formradioinput--inputType-custom {
+	outline-color: var(--_theme---text);
+	outline-width: var(--focus--width);
+	outline-style: solid;
+}
+.w-checkbox-input--inputType-custom.w--redirected-focus,
+.w-form-formradioinput--inputType-custom.w--redirected-focus {
+	box-shadow: none;
+}
+/* Global / Clickable Component */
+.wf-design-mode .g_clickable_wrap {
+	z-index: 0;
+}
+.g_clickable_wrap a[href="#"] {
+	display: none;
+}
+.g_clickable_wrap a[href="#"] ~ button {
+	display: block;
+}
+</style>
+      </div>
+      <div class="page_code_custom w-embed"></div>
+      <div class="page_code_animations w-embed w-script">
+        <script>
+  // ------------------------------------------------------------------
+  // Image and Overlay Slide-In Animation
+  // ------------------------------------------------------------------
+  function initImageAndOverlayAnimations(container = document) {
+    // Select each wrapper with data-animate="imageSlideIn" within the container.
+    const wrappers = container.querySelectorAll('[data-animate="imageSlideIn"]');
+    wrappers.forEach(wrapper => {
+      // Get the two children: overlay and image.
+      const overlay = wrapper.querySelector('.image_overlay');
+      const image = wrapper.querySelector('.g_visual_img');
+      if (!overlay || !image) return;
+      // Ensure initial states (if not already set via CSS).
+      gsap.set([overlay, image], { height: "0%" });
+      gsap.set(image, { opacity: 0 });
+      // Create a ScrollTrigger for the wrapper.
+      ScrollTrigger.create({
+        trigger: wrapper,
+        start: 'top 100%',  // Adjust as needed for when the animation should trigger.
+        once: true,         // Animate only once per page load.
+        onEnter: () => {
+          // Create a timeline for a coordinated animation.
+          let tl = gsap.timeline();
+          // Animate height from 0% to 100% for both the overlay and image.
+          tl.to([overlay, image], {
+            height: "100%",
+            duration: 1,
+            ease: "power2.out"
+          }, 0);
+          // Animate image opacity from 0 to 1, starting at 0.5 seconds.
+          tl.to(image, {
+            opacity: 1,
+            duration: 1,
+            ease: "power2.out"
+          }, 0.5);
+        }
+      });
+    });
+  }
+  // ------------------------------------------------------------------
+  // Global Initializer for Page-Specific Animations
+  // ------------------------------------------------------------------
+  function initPageAnimations(container = document) {
+    initImageAndOverlayAnimations(container);
+  }
+  // Run page animations on full page load (for non-Barba loads).
+  document.addEventListener("DOMContentLoaded", () => initPageAnimations(document));
+</script>
+      </div>
+      <div class="page_code_barba w-embed w-script">
+        <script>
+  // ==================================================
+  // CMS Next Function
+  // ==================================================
+  function initCMSNext() {
+    $("[tr-cmsnext-element='component']").each(function () {
+      let componentEl = $(this),
+          cmsListEl = componentEl.find(".w-dyn-items").first(),
+          cmsItemEl = cmsListEl.children(),
+          currentItemEl,
+          noResultEl = componentEl.find("[tr-cmsnext-element='no-result']");
+      cmsItemEl.each(function () {
+        if ($(this).find(".w--current").length) currentItemEl = $(this);
+      });
+      let nextItemEl = currentItemEl?.next(),
+          prevItemEl = currentItemEl?.prev();
+      if (componentEl.attr("tr-cmsnext-loop") === "true") {
+        if (!nextItemEl?.length) nextItemEl = cmsItemEl.first();
+        if (!prevItemEl?.length) prevItemEl = cmsItemEl.last();
+      }
+      let displayEl = nextItemEl;
+      if (componentEl.attr("tr-cmsnext-showprev") === "true") displayEl = prevItemEl;
+      if (componentEl.attr("tr-cmsnext-showall") === "true") {
+        prevItemEl?.addClass("is-prev");
+        currentItemEl?.addClass("is-current");
+        nextItemEl?.addClass("is-next");
+      } else {
+        cmsItemEl.not(displayEl).remove();
+        if (!displayEl?.length) noResultEl.show();
+        if (!displayEl?.length && componentEl.attr("tr-cmsnext-hideempty") === "true") componentEl.hide();
+        // Re-trigger Webflow interactions (if available)
+        if (window.Webflow && typeof Webflow.require === "function") {
+          const ix2 = Webflow.require("ix2");
+          if (ix2 && typeof ix2.init === "function") {
+            requestAnimationFrame(() => {
+              ix2.init();
+            });
+          }
+        }
+      }
+    });
+  }
+  // ==================================================
+  // Clear the swiperAnimationDone flag on leave so animations re-run on re-entry
+  // ==================================================
+  barba.hooks.beforeLeave((data) => {
+    sessionStorage.removeItem('swiperAnimationDone');
+    if (window.cleanupPage) {
+      window.cleanupPage();
+    }
+  });
+  // ==================================================
+  // Helpers for Webflow Refresh & Script Re-injection
+  // ==================================================
+  function resetWebflow(data) {
+    if (data && data.next && data.next.html) {
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(data.next.html, "text/html");
+      const newPageId = doc.documentElement.getAttribute("data-wf-page");
+      if (newPageId) {
+        document.documentElement.setAttribute("data-wf-page", newPageId);
+      }
+    }
+    if (window.Webflow) {
+      window.Webflow.destroy();
+      window.Webflow.ready();
+      if (typeof window.Webflow.require === "function") {
+        const ix2 = window.Webflow.require("ix2");
+        if (ix2 && typeof ix2.init === "function") {
+          ix2.init();
+        }
+      }
+    }
+  }
+  function runBarbaScripts(nextHTML) {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(nextHTML, "text/html");
+    const scripts = doc.querySelectorAll("script[data-barba-script]");
+    scripts.forEach(originalScript => {
+      const newScript = document.createElement("script");
+      Array.from(originalScript.attributes).forEach(attr => {
+        if (attr.name !== "data-barba-script") {
+          newScript.setAttribute(attr.name, attr.value);
+        }
+      });
+      if (originalScript.src) {
+        newScript.src = originalScript.src;
+      } else {
+        newScript.textContent = originalScript.textContent;
+      }
+      document.body.appendChild(newScript);
+    });
+  }
+  // ==================================================
+  // Global Barba Hook for Final Cleanup
+  // ==================================================
+  barba.hooks.after((data) => {
+    window.scrollTo(0, 0);
+    document.documentElement.style.overflow = "";
+    resetWebflow(data);
+    if (data && data.next && data.next.html) {
+      runBarbaScripts(data.next.html);
+    }
+    const mobileNavbar = document.querySelector(".navbar_mobile");
+    if (mobileNavbar) {
+      mobileNavbar.offsetHeight;
+      mobileNavbar.style.position = "fixed";
+    }
+  });
+  // ==================================================
+  // Barba Transitions
+  // ==================================================
+  let oldContainer;
+  const transitionDuration = 1.5;
+  barba.init({
+    sync: true,
+    transitions: [
+      {
+        name: "overlay-slide-transition",
+        async leave({ current }) {
+          document.getElementById("wait-overlay").style.display = "block";
+          oldContainer = current.container;
+          const overlay = document.getElementById("overlay_barba");
+          const scrollY = window.pageYOffset;
+          oldContainer.style.position = "fixed";
+          oldContainer.style.top = `-${scrollY}px`;
+          oldContainer.style.left = "0";
+          oldContainer.style.width = "100%";
+          document.documentElement.style.overflow = "hidden";
+          overlay.style.display = "block";
+          gsap.to(overlay, {
+            opacity: 1,
+            duration: transitionDuration,
+            ease: "expo.out"
+          });
+          gsap.to(oldContainer, {
+            y: "-100px",
+            duration: transitionDuration,
+            ease: "expo.out"
+          });
+          oldContainer.querySelectorAll('[data-animate]').forEach(el => el.removeAttribute('data-animate'));
+          oldContainer.querySelectorAll('script[data-barba-script]').forEach(script => script.remove());
+          return Promise.resolve();
+        },
+        async enter({ next }) {
+          const overlay = document.getElementById("overlay_barba");
+          window.scrollTo(0, 0);
+          gsap.set(next.container, {
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100%",
+            y: window.innerHeight
+          });
+          let tl = gsap.timeline({
+            onStart: () => {
+              window._barbaTransition = true;
+              if (next.html) {
+                runBarbaScripts(next.html);
+              }
+              next.container.querySelectorAll('script[data-barba-script]').forEach(script => script.remove());
+              gsap.delayedCall(0.3, () => {
+                if (window.initPage) {
+                  window.initPage();
+                }
+                initCMSNext(); // Call initCMSNext here after animations/scripts
+                initPageAnimations(next.container);
+              });
+            },
+            onComplete: () => {
+              overlay.style.display = "none";
+              next.container.style.position = "";
+              document.getElementById("wait-overlay").style.display = "none";
+            }
+          });
+          tl.to(next.container, {
+            y: 0,
+            duration: transitionDuration,
+            ease: "expo.out"
+          }, 0);
+          await tl;
+        }
+      }
+    ]
+  });
+  // ==================================================
+  // Prevent Same-Page Clicks from Reloading
+  // ==================================================
+  document.addEventListener("click", function(event) {
+    const clickedLink = event.target.closest("a");
+    if (!clickedLink) return;
+    const currentPage = window.location.pathname;
+    const clickedPage = new URL(clickedLink.href, window.location.origin).pathname;
+    if (currentPage === clickedPage) {
+      event.preventDefault();
+    }
+  });
+</script>
+      </div>
+      <style>:root {--site--margin: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);--size--2rem: clamp(1.75rem, 1.7rem + 0.25vw, 2rem);--size--2-5rem: clamp(2rem, 1.9rem + 0.5vw, 2.5rem);--size--3rem: clamp(2.25rem, 2.1rem + 0.75vw, 3rem);--size--3-5rem: clamp(2.375rem, 2.15rem + 1.125vw, 3.5rem);--size--4rem: clamp(2.5rem, 2.2rem + 1.5vw, 4rem);--size--4-5rem: clamp(2.75rem, 2.4rem + 1.7500000000000002vw, 4.5rem);--size--5rem: clamp(3rem, 2.6rem + 2vw, 5rem);--size--5-5rem: clamp(3.25rem, 2.8rem + 2.25vw, 5.5rem);--size--6rem: clamp(3.5rem, 3rem + 2.5vw, 6rem);--size--6-5rem: clamp(3.75rem, 3.2rem + 2.75vw, 6.5rem);--size--7rem: clamp(4rem, 3.4rem + 3vw, 7rem);--size--7-5rem: clamp(4.25rem, 3.6rem + 3.25vw, 7.5rem);--size--8rem: clamp(4.5rem, 3.8rem + 3.5000000000000004vw, 8rem);--size--8-5rem: clamp(4.75rem, 4rem + 3.75vw, 8.5rem);--size--9rem: clamp(5rem, 4.2rem + 4vw, 9rem);--size--9-5rem: clamp(5.25rem, 4.4rem + 4.25vw, 9.5rem);--size--10rem: clamp(5.5rem, 4.6rem + 4.5vw, 10rem);--size--11rem: clamp(5.75rem, 4.7rem + 5.25vw, 11rem);--size--12rem: clamp(6rem, 4.8rem + 6vw, 12rem);--size--13rem: clamp(6.5rem, 5.2rem + 6.5vw, 13rem);--size--14rem: clamp(7rem, 5.6rem + 7.000000000000001vw, 14rem);--size--15rem: clamp(7.5rem, 6rem + 7.5vw, 15rem);--size--16rem: clamp(8rem, 6.4rem + 8vw, 16rem);}</style>
+    </div>
+    <div class="page-scripts w-embed w-script"><!--  Run image/overlay animations on DOM content loaded  -->
+      <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    initImageAndOverlayAnimations();
+  });
+</script>
+      <!--  Project extended description toggle with GSAP animations  -->
+      <script data-barba-script="">
+  (function() {
+    // Toggle state variable for description expansion
+    let isOpen = false;
+    const description = document.querySelector(".project_page_description_extended");
+    const btn = document.getElementById("btn_show-project-extended");
+    const arrow = document.querySelector(".btn_main_arrow-down");
+    const btnText = document.getElementById("btn_text_show-more");
+    if (btn) {
+      btn.addEventListener("click", function() {
+        if (!isOpen) {
+          // Expand description: get the target height and animate from 0 to target
+          description.style.height = 'auto';
+          const targetHeight = description.offsetHeight;
+          description.style.height = '0px';
+          void description.offsetHeight; // Force reflow
+          gsap.to(description, {
+            height: targetHeight,
+            duration: 0.4,
+            ease: "power1.inOut",
+            onComplete: () => {
+              description.style.height = "auto";
+            }
+          });
+          // Rotate arrow 180 degrees
+          gsap.to(arrow, { 
+            rotation: 180, 
+            duration: 0.4, 
+            ease: "power1.inOut" 
+          });
+          // Change button text to "Read Less"
+          btnText.textContent = "Read Less";
+        } else {
+          // Collapse description
+          const currentHeight = description.scrollHeight;
+          description.style.height = currentHeight + "px";
+          void description.offsetHeight; // Force reflow
+          gsap.to(description, {
+            height: 0,
+            duration: 0.4,
+            ease: "power1.inOut"
+          });
+          // Rotate arrow back to 0 degrees
+          gsap.to(arrow, { 
+            rotation: 0, 
+            duration: 0.4, 
+            ease: "power1.inOut" 
+          });
+          // Change button text to "Read More"
+          btnText.textContent = "Read More";
+        }
+        isOpen = !isOpen;
+      });
+    }
+  })();
+</script>
+    </div>
+    <div id="overlay_barba" class="overlay_barba"></div>
+  </div>
+  <div id="navbar_mobile" class="navbar_mobile">
+    <div data-wf--global-section-space--section-space="even" class="g_section_space w-variant-41fc0c0a-cac3-53c9-9802-6a916e3fb342"></div>
+    <div class="nav_mobile u-container">
+      <div></div>
+      <div id="btn_close_menu_mobile" class="btn_close_menu_mobile">close</div>
+    </div>
+    <ul role="list" class="nav_mobile_links u-vflex-left-top w-list-unstyled">
+      <li class="nav_mobile_link_item u-text-style-h3">
+        <a href="index.html" class="nav_mobile_link_link w-inline-block">
+          <div class="nav_1_links_text">home</div>
+        </a>
+      </li>
+      <li class="nav_mobile_link_item u-text-style-h3">
+        <a href="about.html" class="nav_mobile_link_link w-inline-block">
+          <div class="nav_1_links_text">about</div>
+        </a>
+      </li>
+      <li class="nav_mobile_link_item u-text-style-h3">
+        <a href="works.html" class="nav_mobile_link_link w-inline-block">
+          <div class="nav_1_links_text">works</div>
+        </a>
+      </li>
+      <li class="nav_mobile_link_item u-text-style-h3">
+        <a href="playground.html" class="nav_mobile_link_link w-inline-block">
+          <div class="nav_1_links_text">playground</div>
+        </a>
+      </li>
+      <li class="nav_mobile_link_item u-text-style-h3">
+        <a href="playground.html" class="nav_mobile_link_link w-inline-block">
+          <div class="nav_1_links_text">connect</div>
+        </a>
+      </li>
+    </ul>
+    <div class="page-scripts w-embed w-script">
+      <script data-barba-script="">
+  // Function to open the mobile menu (targeting the element by ID)
+  function openMobileMenu() {
+    const mobileNavbar = document.getElementById("navbar_mobile");
+    if (!mobileNavbar) return;
+    // Lock scroll
+    document.body.style.overflow = 'hidden';
+    // Show the mobile menu and trigger its height transition.
+    mobileNavbar.style.display = "block";
+    mobileNavbar.style.height = "0svh";
+    mobileNavbar.style.bottom = "0";
+    mobileNavbar.style.top = "auto";
+    mobileNavbar.offsetHeight; // Force reflow.
+    mobileNavbar.style.height = "100vh";
+  }
+  // Function to initialize the mobile menu (targeting the element by class)
+  function initializeMobileMenu() {
+    const mobileNavbar = document.querySelector(".navbar_mobile");
+    if (!mobileNavbar) return;
+    // Clear any previous inline styles and set defaults.
+    mobileNavbar.removeAttribute("style");
+    mobileNavbar.style.position = "fixed";
+    mobileNavbar.style.left = "0";
+    mobileNavbar.style.width = "100%";
+    mobileNavbar.style.height = "0svh";
+    mobileNavbar.style.transition = "height 0.5s ease-in-out";
+    mobileNavbar.style.bottom = "0";
+    mobileNavbar.style.top = "auto";
+    mobileNavbar.style.display = "none";
+    // Set initial animation states for nav items and the close button.
+    const navItems = mobileNavbar.querySelectorAll(".nav_mobile_link_link");
+    navItems.forEach(item => {
+      item.style.transform = "translateY(100%)";
+      item.style.transition = "transform 0.6s ease-in-out";
+      item.style.transitionDelay = "0s";
+    });
+    const closeButton = mobileNavbar.querySelector(".btn_close_menu_mobile");
+    if (closeButton) {
+      closeButton.style.opacity = "0";
+      closeButton.style.transition = "opacity 0.3s ease-in-out";
+      closeButton.style.transitionDelay = "0s";
+    }
+    // Attach the open button event listener.
+    const openBtn = document.getElementById("btn_open_menu_mobile");
+    if (openBtn) {
+      openBtn.addEventListener("click", openMobileMenu);
+    }
+    // Define a function to close the menu.
+    function closeMenu() {
+      mobileNavbar.style.top = "0";
+      mobileNavbar.style.bottom = "auto";
+      mobileNavbar.style.height = "0svh";
+      // Unlock scroll
+      document.body.style.overflow = '';
+    }
+    // Attach the close button action.
+    if (closeButton) {
+      closeButton.addEventListener("click", closeMenu);
+    }
+    // Attach event listeners to each nav link that should also close the menu.
+    navItems.forEach(link => {
+      link.addEventListener("click", closeMenu);
+    });
+    // Listen for transition end on the mobile menu.
+    mobileNavbar.addEventListener("transitionend", function(e) {
+      if (e.propertyName === "height") {
+        if (mobileNavbar.style.height === "0svh") {
+          // Menu is fully closed.
+          // Unlock scroll again just in case
+          document.body.style.overflow = '';
+          // Reset nav items and the close button.
+          navItems.forEach(item => {
+            item.style.transitionDelay = "0s";
+            item.style.transform = "translateY(100%)";
+          });
+          if (closeButton) {
+            closeButton.style.opacity = "0";
+          }
+          mobileNavbar.style.display = "none";
+          mobileNavbar.style.top = "auto";
+          mobileNavbar.style.bottom = "0";
+        } else if (mobileNavbar.style.height === "100svh" || mobileNavbar.style.height === "100vh") {
+          // Menu is fully open.
+          mobileNavbar.style.top = "0";
+          mobileNavbar.style.bottom = "auto";
+          // Stagger the opening animation
+          navItems.forEach((item, index) => {
+            const delay = index * 0.1;
+            item.style.transitionDelay = `${delay}s`;
+            item.style.transform = "translateY(0)";
+          });
+          // Fade in the close button
+          if (closeButton) {
+            closeButton.style.transitionDelay = "0.05s";
+            closeButton.style.opacity = "1";
+          }
+        }
+      }
+    });
+  }
+  // On DOMContentLoaded, attach the open button event listener and initialize the mobile menu.
+  document.addEventListener("DOMContentLoaded", function() {
+    const openBtn = document.getElementById("btn_open_menu_mobile");
+    if (openBtn) {
+      openBtn.addEventListener("click", openMobileMenu);
+    }
+    initializeMobileMenu();
+  });
+  // Reinitialize the mobile menu after every Barba transition.
+  document.addEventListener("barba:enter", initializeMobileMenu);
+</script>
+    </div>
+  </div>
+  <div id="wait-overlay" class="wait-overlay"></div>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=67d80787380c03d2e553e8ac" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="js/webflow.js" type="text/javascript"></script>
+  <script data-barba-script="">
+(function() {
+  // Hold references for cleanup.
+  let dynamicTextInterval = null;
+  let cloneAnimationCleanup = () => {};
+  let badgeTrailCleanup = () => {};
+  // --------------------------------------------------
+  // Clone Animation (Home Wrapper)
+  // --------------------------------------------------
+  function initCloneAnimation() {
+    const container = document.querySelector(".home-wrapper");
+    if (!container) return;
+    // Prevent duplicate initialization on the same element.
+    if (container.dataset.cloneInitialized === "true") {
+      return;
+    }
+    container.dataset.cloneInitialized = "true";
+    const originalDiv = container.querySelector(".home-clone-element");
+    if (!originalDiv) return;
+    // Define neon colors and starting index.
+    const neonColors = [
+      "#39FF14", // Neon Green
+      "#FF073A", // Neon Red
+      "#29ABE2", // Neon Blue
+      "#FF6EC7", // Neon Pink
+      "#FFFF33", // Neon Yellow
+      "#00FFFF"  // Neon Cyan
+    ];
+    let currentColorIndex = 0;
+    // Initially apply a random neon color
+    const randomColor = neonColors[Math.floor(Math.random() * neonColors.length)];
+    originalDiv.style.backgroundColor = randomColor;
+    // (Removed update of fill on .path-ze)
+    // Function to create and animate a clone.
+    const createClone = (x, y) => {
+      const clone = originalDiv.cloneNode(true);
+      clone.style.left = `${x}px`;
+      clone.style.top = `${y}px`;
+      clone.style.visibility = "visible";
+      clone.style.opacity = "1";
+      clone.style.backgroundColor = originalDiv.style.backgroundColor;
+      if (originalDiv.classList.contains("rotate")) clone.classList.add("rotate");
+      container.appendChild(clone);
+      setTimeout(() => clone.remove(), 1000); // Remove after 1 second.
+    };
+    // Handler for mouse or touch movement.
+    const handleMove = (event) => {
+      const x = event.touches ? event.touches[0].pageX : event.pageX;
+      const y = event.touches ? event.touches[0].pageY : event.pageY;
+      const containerRect = container.getBoundingClientRect();
+      const withinContainer =
+        x >= containerRect.left &&
+        x <= containerRect.right &&
+        y >= containerRect.top &&
+        y <= containerRect.bottom;
+      if (withinContainer) createClone(x, y);
+    };
+    const isTouchDevice = "ontouchstart" in document.documentElement;
+    if (isTouchDevice) {
+      container.addEventListener("touchmove", handleMove);
+    } else {
+      container.addEventListener("mousemove", handleMove);
+    }
+    // Keydown handler for toggling animations and creating clone bursts.
+    const keydownHandler = (event) => {
+      const key = event.key.toLowerCase();
+      if (key === "r") {
+        originalDiv.classList.toggle("rotate");
+      } else if (key === "s") {
+        for (let i = 0; i < 5; i++) {
+          const x = Math.random() * window.innerWidth;
+          const y = Math.random() * window.innerHeight;
+          createClone(x, y);
+        }
+      } else if (key === "c") {
+        currentColorIndex = (currentColorIndex + 1) % neonColors.length;
+        originalDiv.style.backgroundColor = neonColors[currentColorIndex];
+        // (Removed update of fill on .path-ze)
+      }
+    };
+    document.addEventListener("keydown", keydownHandler);
+    // Define cleanup for this functionality.
+    cloneAnimationCleanup = () => {
+      if (isTouchDevice) {
+        container.removeEventListener("touchmove", handleMove);
+      } else {
+        container.removeEventListener("mousemove", handleMove);
+      }
+      document.removeEventListener("keydown", keydownHandler);
+    };
+  }
+  // --------------------------------------------------
+  // Badge Trail Effect (Loading Container)
+  // --------------------------------------------------
+  function initBadgeTrail() {
+    const badgeContainer = document.querySelector('.loading-container');
+    const originalBadge = badgeContainer ? badgeContainer.querySelector('.loading-badge') : null;
+    if (badgeContainer && originalBadge) {
+      const badgeHandler = function (event) {
+        const clone = originalBadge.cloneNode(true);
+        clone.classList.add('loading-badge-clone');
+        clone.style.left = event.pageX + 'px';
+        clone.style.top = event.pageY + 'px';
+        document.body.appendChild(clone);
+        setTimeout(() => clone.remove(), 1000);
+      };
+      badgeContainer.addEventListener('mousemove', badgeHandler);
+      badgeTrailCleanup = () => {
+        badgeContainer.removeEventListener('mousemove', badgeHandler);
+      };
+    }
+  }
+  // --------------------------------------------------
+  // Tooltip Toggle for Touch Devices
+  // --------------------------------------------------
+  function initTooltipToggle() {
+    const isTouchDevice =
+      "ontouchstart" in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
+    const targetDiv = document.querySelector(".tooltip-press-drag");
+    if (targetDiv) {
+      targetDiv.style.display = isTouchDevice ? "block" : "none";
+    }
+  }
+  // --------------------------------------------------
+  // Dynamic Text Cycling
+  // --------------------------------------------------
+  function initDynamicText() {
+    const dynamicText = document.querySelector('.dynamic-text');
+    if (!dynamicText) return;
+    const textArray = [
+"Welcome!",                // English  
+"ようこそ！",               // Japanese  
+"Bem-vindo!",              // Portuguese  
+"환영합니다!",              // Korean  
+"Bienvenue!",              // French  
+"Selamat datang!",         // Indonesian  
+"Willkommen!",             // German  
+"欢迎！",                   // Chinese (Mandarin)  
+"Benvenuto!",              // Italian  
+"أهلاً وسهلاً!",            // Arabic  
+"¡Bienvenido!",            // Spanish  
+"स्वागत है!",               // Hindi  
+"Добро пожаловать!"        // Russian  
+    ];
+    let currentIndex = 0;
+    function changeText() {
+      currentIndex = (currentIndex + 1) % textArray.length;
+      dynamicText.textContent = textArray[currentIndex];
+    }
+    dynamicTextInterval = setInterval(changeText, 2000);
+  }
+  function cleanupDynamicText() {
+    if (dynamicTextInterval) {
+      clearInterval(dynamicTextInterval);
+      dynamicTextInterval = null;
+    }
+  }
+  // --------------------------------------------------
+  // Global Page Initialization & Cleanup
+  // --------------------------------------------------
+  function initPage() {
+    initCloneAnimation();
+    initBadgeTrail();
+    initTooltipToggle();
+    initDynamicText();
+  }
+  function cleanupPage() {
+    cloneAnimationCleanup();
+    badgeTrailCleanup();
+    cleanupDynamicText();
+    const container = document.querySelector(".home-wrapper");
+    if (container) {
+      delete container.dataset.cloneInitialized;
+    }
+  }
+  window.initPage = initPage;
+  window.cleanupPage = cleanupPage;
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initPage);
+  } else {
+    initPage();
+  }
+})();
+</script>
+  <script>
+  /**
+   * Sets up animated text for a given selector (for titles/years)
+   * by wrapping each word in a container (.word) and each letter
+   * in a container (.letter).
+   *
+   * @param {string} selector - The CSS selector (e.g., ".project_page_title")
+   * @param {Document|Element} container - The container to search inside (defaults to document)
+   */
+  function setupAnimatedText(selector, container = document) {
+    const element = container.querySelector(selector);
+    if (!element) {
+      return;
+    }
+    // Save the original text (trimmed) if not already stored.
+    if (!element.getAttribute("data-original-text")) {
+      element.setAttribute("data-original-text", element.textContent);
+    }
+    const originalText = element.getAttribute("data-original-text").trim();
+    element.innerHTML = "";
+    let globalIndex = 0;
+    const words = originalText.split(" ");
+    words.forEach((word, wordIndex) => {
+      const wordSpan = document.createElement("span");
+      wordSpan.className = "word";
+      for (let i = 0; i < word.length; i++) {
+        const letterSpan = document.createElement("span");
+        letterSpan.className = "letter";
+        letterSpan.textContent = word[i];
+        // Use a low staggering delay (10ms per letter)
+        letterSpan.style.transitionDelay = `${globalIndex * 10}ms`;
+        globalIndex++;
+        wordSpan.appendChild(letterSpan);
+      }
+      element.appendChild(wordSpan);
+      if (wordIndex < words.length - 1) {
+        wordSpan.style.marginRight = "0.25em";
+      }
+    });
+  }
+  /**
+   * Animates the text by adding the "animate" class to each letter.
+   *
+   * @param {string} selector - The CSS selector (e.g., ".project_page_title")
+   * @param {Document|Element} container - The container to search inside (defaults to document)
+   */
+  function animateAnimatedText(selector, container = document) {
+    const element = container.querySelector(selector);
+    if (!element) {
+      return;
+    }
+    element.style.opacity = "1";
+    const letters = element.querySelectorAll(".letter");
+    letters.forEach(letter => letter.classList.add("animate"));
+  }
+  /**
+   * Runs the animated text setup and animation for both title and year.
+   *
+   * @param {Document|Element} container - The container to animate (defaults to document)
+   */
+  function runAnimatedText(container = document) {
+    setupAnimatedText(".project_page_title", container);
+    setupAnimatedText(".project_page_year", container);
+    setTimeout(() => {
+      animateAnimatedText(".project_page_title", container);
+      animateAnimatedText(".project_page_year", container);
+    }, 300);
+  }
+  /**
+   * Animates subtle elements (.project_page_description and .project_services)
+   * by adding the "animate" class with a delay so they fade in after the title/year.
+   *
+   * @param {Document|Element} container - The container to search inside (defaults to document)
+   */
+  function animateSubtleElements(container = document) {
+    const elements = container.querySelectorAll(".project_page_description, .project_services");
+    elements.forEach((el, index) => {
+      setTimeout(() => {
+        el.classList.add("animate");
+      }, 500 + index * 100);
+    });
+  }
+  /**
+   * Runs all animations on the provided container.
+   *
+   * @param {Document|Element} container - The container to animate (defaults to document)
+   */
+  function runAllAnimations(container = document) {
+    runAnimatedText(container);
+    animateSubtleElements(container);
+  }
+  // Run animations on direct page load.
+  document.addEventListener("DOMContentLoaded", () => {
+    runAllAnimations(document);
+  });
+  // Run animations on Barba transitions (as the page enters).
+  if (typeof barba !== "undefined") {
+    barba.hooks.beforeEnter(data => {
+      runAllAnimations(data.next.container);
+    });
+  }
+</script>
+  <script data-barba-script="">
+(function() {
+  function wrapWordsAndLetters(container) {
+    const el = container.querySelector(".connect_main_text");
+    if (!el) return;
+    const text = el.textContent.trim();
+    el.innerHTML = "";
+    text.split(" ").forEach((word, wi, arr) => {
+      const w = document.createElement("span");
+      w.className = "word";
+      for (let i = 0; i < word.length; i++) {
+        const l = document.createElement("span");
+        l.className = "letter";
+        l.textContent = word[i];
+        w.appendChild(l);
+      }
+      el.appendChild(w);
+      if (wi < arr.length - 1) el.appendChild(document.createTextNode("\u00A0"));
+    });
+  }
+  function animateConnect(container) {
+    wrapWordsAndLetters(container);
+    const letters   = Array.from(container.querySelectorAll(".connect_main_text .letter"));
+    const texts     = gsap.utils.toArray(container.querySelectorAll(".connect_text"));
+    const links     = gsap.utils.toArray(container.querySelectorAll(".connect_bottom_links > *"));
+    const underline = container.querySelector(".btn_connect_underline");
+    const vh        = window.innerHeight;
+    gsap.killTweensOf([letters, texts, links, underline]);
+    gsap.set(letters,   { y: "100%", autoAlpha: 0 });
+    gsap.set(texts,     { y: "-100%", autoAlpha: 0 });
+    gsap.set(links,     { y: vh,       autoAlpha: 1 });
+    if (underline) gsap.set(underline, { scaleX: 0, autoAlpha: 0 });
+    const tl = gsap.timeline({ delay: 0.2 });
+    tl.to(letters, {
+        y: "0%",
+        autoAlpha: 1,
+        duration: 0.8,
+        ease: "power3.out",
+        stagger: { each: 0.05, from: "start" }
+      })
+      .to(texts, {
+        y: "0%",
+        autoAlpha: 1,
+        duration: 0.8,
+        ease: "power3.out"
+      }, "<+0.2")
+      // <-- after connect_text finishes, reveal its parent overflow
+      .add(() => {
+        gsap.utils
+          .toArray(container.querySelectorAll('.btn_undertitle'))
+          .forEach(el => el.style.overflow = 'visible');
+      })
+      .to(links, {
+        y: "0",
+        duration: 0.8,
+        ease: "power3.out",
+        stagger: { each: 0.15, from: "start" }
+      }, "<+0.2")
+      .to(underline, {
+        scaleX: 1,
+        autoAlpha: 1,
+        duration: 0.8,
+        ease: "expo.out"
+      }, "<+0.2");
+  }
+  document.addEventListener("DOMContentLoaded", () => animateConnect(document));
+  if (typeof barba !== "undefined") {
+    barba.hooks.enter(({ next }) => animateConnect(next.container));
+  }
+})();
+</script>
+  <script>
+initCMSNext(); 
+</script>
+</body>
+</html>
